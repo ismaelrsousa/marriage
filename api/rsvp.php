@@ -131,22 +131,22 @@ try {
     $db->commit();
     $db->close();
 
-    $guestList = implode(', ', $guests);
-    $subject = 'Nova confirmação de presença — ' . $guestList;
-    $body = "Nova confirmação no site do casamento.\n\n"
-        . "Quem vai: {$guestList}\n"
-        . 'WhatsApp: ' . ($contact !== '' ? $contact : '(não informado)') . "\n"
-        . 'Recado: ' . ($note !== '' ? $note : '(sem recado)') . "\n";
+    // $guestList = implode(', ', $guests);
+    // $subject = 'Nova confirmação de presença — ' . $guestList;
+    // $body = "Nova confirmação no site do casamento.\n\n"
+    //     . "Quem vai: {$guestList}\n"
+    //     . 'WhatsApp: ' . ($contact !== '' ? $contact : '(não informado)') . "\n"
+    //     . 'Recado: ' . ($note !== '' ? $note : '(sem recado)') . "\n";
 
-    $encodedSubject = '=?UTF-8?B?' . base64_encode($subject) . '?=';
-    $headers = [
-        'MIME-Version: 1.0',
-        'Content-Type: text/plain; charset=UTF-8',
-        'From: Casamento <' . $config['from_email'] . '>',
-        'Reply-To: ' . ($contact !== '' ? $contact : $config['from_email']),
-    ];
+    // $encodedSubject = '=?UTF-8?B?' . base64_encode($subject) . '?=';
+    // $headers = [
+    //     'MIME-Version: 1.0',
+    //     'Content-Type: text/plain; charset=UTF-8',
+    //     'From: Casamento <' . $config['from_email'] . '>',
+    //     'Reply-To: ' . ($contact !== '' ? $contact : $config['from_email']),
+    // ];
 
-    @mail($config['notify_email'], $encodedSubject, $body, implode("\r\n", $headers));
+    // @mail($config['notify_email'], $encodedSubject, $body, implode("\r\n", $headers));
 
     echo json_encode(['ok' => true]);
 } catch (Throwable $exception) {
