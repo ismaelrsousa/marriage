@@ -1,4 +1,4 @@
-import { Ban, Check } from "lucide-react"
+import { Check } from "lucide-react"
 import { SectionTitle } from "./SectionTitle"
 
 export function DressCode() {
@@ -13,12 +13,12 @@ export function DressCode() {
 
         <div className="mt-12 grid gap-6 md:grid-cols-2">
           <LookCard
-            src="/images/dress-terno.png"
+            src={`${import.meta.env.BASE_URL}images/dress-terno.png`}
             title="Homens"
             caption="Terno completo, sapato social. Gravata é bem-vinda, não obrigatória."
           />
           <LookCard
-            src="/images/dress-vestido.png"
+            src={`${import.meta.env.BASE_URL}images/dress-vestido.png`}
             title="Mulheres"
             caption="Vestido longo. Tons claros, florais e as cores da festa combinam."
           />

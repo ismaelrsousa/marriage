@@ -50,7 +50,7 @@ export function CornerBloom({
 }) {
   return (
     <img
-      src="/images/floral-canto.png"
+      src={`${import.meta.env.BASE_URL}images/floral-canto.png`}
       alt=""
       className={`pointer-events-none select-none mix-blend-multiply ${className}`}
     />

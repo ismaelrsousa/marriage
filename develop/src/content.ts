@@ -1,3 +1,6 @@
+export const asset = (path: string) =>
+  `${import.meta.env.BASE_URL}${path.replace(/^\//, "")}`
+
 export const site = {
   partnerA: "Nayara",
   partnerB: "Ismael",
@@ -6,7 +9,7 @@ export const site = {
   dateShort: "14.11.2026",
   ceremonyTime: "15h",
   about: {
-    photo: "/images/sobre-casal.png",
+    photo: asset("images/sobre-casal.png"),
     text: `
     Nossa história, agora para sempre. </br></br>
 
@@ -37,26 +40,26 @@ export const site = {
     notes: "Cerimônia no jardim às 15h. A festa segue no pavilhão ao lado.",
     mapsQuery: "Rua Rio de Janeiro, 627, Itanhaém - SP",
     photos: [
-      { src: "/images/local-fachada.png", alt: "Fachada da quinta" },
-      { src: "/images/local-cerimonia.png", alt: "Jardim da cerimônia" },
-      { src: "/images/local-festa.png", alt: "Salão da festa" },
+      { src: asset("images/local-fachada.png"), alt: "Fachada da quinta" },
+      { src: asset("images/local-cerimonia.png"), alt: "Jardim da cerimônia" },
+      { src: asset("images/local-festa.png"), alt: "Salão da festa" },
     ],
   },
   gallery: [
-    { src: "/images/hero-casal.png", alt: "Ensaio ao entardecer" },
-    { src: "/images/galeria-1.jpg", alt: "Caminhando pelo jardim" },
-    { src: "/images/galeria-2.png", alt: "Mãos dadas" },
-    { src: "/images/galeria-3.png", alt: "Jantar ao ar livre" },
-    { src: "/images/galeria-danca.png", alt: "Dança no jardim" },
-    { src: "/images/galeria-campo.png", alt: "Campo de flores" },
+    { src: asset("images/hero-casal.png"), alt: "Ensaio ao entardecer" },
+    { src: asset("images/galeria-1.jpg"), alt: "Caminhando pelo jardim" },
+    { src: asset("images/galeria-2.png"), alt: "Mãos dadas" },
+    { src: asset("images/galeria-3.png"), alt: "Jantar ao ar livre" },
+    { src: asset("images/galeria-danca.png"), alt: "Dança no jardim" },
+    { src: asset("images/galeria-campo.png"), alt: "Campo de flores" },
   ],
   gifts: {
     url: "https://www.querodecasamento.com.br",
     label: "Abrir lista de presentes",
   },
   rsvpWebhook: "",
-  heroPhoto: "/images/hero-casal.png",
-} as const
+  heroPhoto: asset("images/hero-casal.png"),
+}
 
 export const navItems = [
   { href: "#inicio", label: "Início" },

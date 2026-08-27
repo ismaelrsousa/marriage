@@ -2,8 +2,6 @@ import { MapPin } from "lucide-react"
 import { site } from "../content"
 import { SectionTitle } from "./SectionTitle"
 
-const mapsSrc = `https://maps.google.com/maps?q=${encodeURIComponent(site.venue.mapsQuery)}&hl=pt-BR&z=14&output=embed`
-
 export function Venue() {
   const { venue } = site
 
