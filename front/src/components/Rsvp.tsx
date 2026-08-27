@@ -1,15 +1,19 @@
 import { Plus, X } from "lucide-react"
 import { useState, type FormEvent } from "react"
-import { site } from "../content"
 import { SectionTitle } from "./SectionTitle"
 
-const storageKey = "rsvp-casamento"
+const rsvpUrl = `http://localhost:8080/rsvp.php`
+
+function wordCount(value: string) {
+  return value.trim().split(/\s+/).filter(Boolean).length
+}
 
 export function Rsvp() {
   const [names, setNames] = useState<string[]>([""])
   const [contact, setContact] = useState("")
   const [note, setNote] = useState("")
   const [sent, setSent] = useState(false)
+  const [saving, setSaving] = useState(false)
   const [error, setError] = useState("")
 
   const updateName = (index: number, value: string) => {
@@ -22,37 +26,56 @@ export function Rsvp() {
     setNames((prev) => (prev.length === 1 ? [""] : prev.filter((_, i) => i !== index)))
   }
 
-  const onSubmit = (event: FormEvent) => {
+  const onSubmit = async (event: FormEvent) => {
     event.preventDefault()
     const guests = names.map((n) => n.trim()).filter(Boolean)
     if (guests.length === 0) {
       setError("Digite pelo menos o nome de quem vai.")
       return
     }
-    const payload = {
-      guests,
-      contact: contact.trim(),
-      note: note.trim(),
-      at: new Date().toISOString(),
+    if (guests.some((guest) => wordCount(guest) < 2)) {
+      setError("Digite nome e sobrenome de cada pessoa.")
+      return
     }
-    let previous: unknown[] = []
+
+    setSaving(true)
+    setError("")
     try {
-      const raw = localStorage.getItem(storageKey)
-      previous = raw ? (JSON.parse(raw) as unknown[]) : []
-      if (!Array.isArray(previous)) previous = []
-    } catch {
-      previous = []
-    }
-    localStorage.setItem(storageKey, JSON.stringify([...previous, payload]))
-    if (site.rsvpWebhook) {
-      void fetch(site.rsvpWebhook, {
+      const response = await fetch(rsvpUrl, {
         method: "POST",
         headers: { Accept: "application/json", "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
+        body: JSON.stringify({
+          guests,
+          contact: contact.trim(),
+          note: note.trim(),
+        }),
       })
+
+      console.debug(response);
+      const payload = (await response.json()) as {
+        ok?: boolean
+        error?: string
+        message?: string
+        file?: string
+        line?: number
+      }
+      if (!payload.ok) {
+        console.error("[RSVP]", payload)
+      }
+      if (!response.ok || !payload.ok) {
+        if (payload.error === "fullname") {
+          setError("Digite nome e sobrenome de cada pessoa.")
+          return
+        }
+        throw new Error(payload.message ?? "rsvp")
+      }
+      setSent(true)
+    } catch (err) {
+      console.error("[RSVP]", err)
+      setError("Não deu para confirmar agora. Tente de novo em instantes.")
+    } finally {
+      setSaving(false)
     }
-    setSent(true)
-    setError("")
   }
 
   return (
@@ -60,7 +83,7 @@ export function Rsvp() {
       <div className="mx-auto max-w-2xl">
         <SectionTitle kicker="RSVP" title="Confirme sua presença" />
         <p className="mt-5 text-center text-muted">
-          Digite o nome de cada pessoa da família que vai à festa.
+          Digite o nome e o sobrenome de cada pessoa da família que vai à festa.
         </p>
 
         {sent ? (
@@ -82,7 +105,7 @@ export function Rsvp() {
                   <input
                     value={name}
                     onChange={(e) => updateName(index, e.target.value)}
-                    placeholder={`Nome ${index + 1}`}
+                    placeholder="Nome e sobrenome"
                     className="w-full rounded-2xl border border-cream-deep bg-white px-4 py-3 outline-none ring-orange/30 placeholder:text-muted/50 focus:ring-2"
                   />
                   <button
@@ -106,7 +129,7 @@ export function Rsvp() {
             </div>
 
             <label className="block">
-              <span className="text-sm font-medium text-ink">WhatsApp ou e-mail</span>
+              <span className="text-sm font-medium text-ink">WhatsApp</span>
               <input
                 value={contact}
                 onChange={(e) => setContact(e.target.value)}
@@ -129,9 +152,10 @@ export function Rsvp() {
 
             <button
               type="submit"
-              className="w-full rounded-full bg-orange py-3.5 font-medium text-cream hover:bg-orange-deep"
+              disabled={saving}
+              className="w-full rounded-full bg-orange py-3.5 font-medium text-cream hover:bg-orange-deep disabled:opacity-60"
             >
-              Confirmar presença
+              {saving ? "Enviando..." : "Confirmar presença"}
             </button>
           </form>
         )}

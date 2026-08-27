@@ -57,7 +57,6 @@ export const site = {
     url: "https://www.querodecasamento.com.br",
     label: "Abrir lista de presentes",
   },
-  rsvpWebhook: "",
   heroPhoto: asset("images/hero-casal.png"),
 }
 
