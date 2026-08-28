@@ -81,7 +81,7 @@ export function Rsvp() {
   return (
     <section id="confirmar" className="scroll-mt-24 bg-pink/10 px-5 py-24">
       <div className="mx-auto max-w-2xl">
-        <SectionTitle kicker="RSVP" title="Confirme sua presença" />
+        <SectionTitle kicker="" title="Confirme sua presença" />
         <p className="mt-5 text-center text-muted">
           Digite o nome e o sobrenome de cada pessoa da família que vai à festa.
         </p>

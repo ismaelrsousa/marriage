@@ -44,13 +44,13 @@ export function Venue() {
           </div>
         </div>
 
-        <div className="mt-8 grid gap-4 sm:grid-cols-3">
+        <div className="mt-8 grid gap-4 sm:grid-cols-4">
           {venue.photos.map((photo) => (
             <img
               key={photo.src}
               src={photo.src}
               alt={photo.alt}
-              className="h-52 w-full rounded-[1.6rem] object-cover shadow-sm"
+              className="h-100 w-full rounded-[1.6rem] object-cover object-bottom shadow-sm"
               loading="lazy"
             />
           ))}

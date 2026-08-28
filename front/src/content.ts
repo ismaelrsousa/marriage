@@ -9,7 +9,7 @@ export const site = {
   dateShort: "14.11.2026",
   ceremonyTime: "15h",
   about: {
-    photo: asset("images/sobre-casal.png"),
+    photo: asset("images/sobre-casal.jpg"),
     text: `
     Nossa história, agora para sempre. </br></br>
 
@@ -40,18 +40,19 @@ export const site = {
     notes: "Cerimônia no jardim às 15h. A festa segue no pavilhão ao lado.",
     mapsQuery: "Rua Rio de Janeiro, 627, Itanhaém - SP",
     photos: [
-      { src: asset("images/local-fachada.png"), alt: "Fachada da quinta" },
+      { src: asset("images/local-1.jpg"), alt: "Fachada da quinta" },
+      { src: asset("images/local-2.jpg"), alt: "Jardim da cerimônia" },
       { src: asset("images/local-cerimonia.png"), alt: "Jardim da cerimônia" },
-      { src: asset("images/local-festa.png"), alt: "Salão da festa" },
+      { src: asset("images/local-3.jpg"), alt: "Salão da festa" },
     ],
   },
   gallery: [
     { src: asset("images/hero-casal.png"), alt: "Ensaio ao entardecer" },
     { src: asset("images/galeria-1.jpg"), alt: "Caminhando pelo jardim" },
-    { src: asset("images/galeria-2.png"), alt: "Mãos dadas" },
     { src: asset("images/galeria-3.png"), alt: "Jantar ao ar livre" },
-    { src: asset("images/galeria-danca.png"), alt: "Dança no jardim" },
-    { src: asset("images/galeria-campo.png"), alt: "Campo de flores" },
+    { src: asset("images/galeria-4.png"), alt: "Dança no jardim" },
+    { src: asset("images/galeria-5.png"), alt: "Campo de flores" },
+    { src: asset("images/galeria-2.png"), alt: "Mãos dadas" },
   ],
   gifts: {
     url: "https://www.querodecasamento.com.br",
@@ -61,12 +62,11 @@ export const site = {
 }
 
 export const navItems = [
-  { href: "#inicio", label: "Início" },
-  { href: "#contagem", label: "Contagem" },
-  { href: "#casal", label: "O casal" },
-  { href: "#fotos", label: "Fotos" },
-  { href: "#local", label: "Local" },
-  { href: "#traje", label: "Traje" },
-  { href: "#presentes", label: "Presentes" },
-  { href: "#confirmar", label: "Confirmar" },
+  { href: "#contagem", label: "Quanto falta" },
+  { href: "#casal", label: "Nós dois" },
+  { href: "#fotos", label: "Memórias" },
+  { href: "#local", label: "Onde vai ser" },
+  { href: "#traje", label: "O que vestir" },
+  { href: "#presentes", label: "Lista de Presentes" },
+  { href: "#confirmar", label: "Confirme sua Presença" },
 ] as const

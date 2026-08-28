@@ -1,5 +1,6 @@
 import { Check } from "lucide-react"
 import { SectionTitle } from "./SectionTitle"
+import { FlowerSVG } from "./Icons"
 
 export function DressCode() {
   return (
@@ -22,6 +23,37 @@ export function DressCode() {
             title="Mulheres"
             caption="Vestido longo. Tons claros, florais e as cores da festa combinam."
           />
+        </div>
+
+        <p className="mx-auto mt-12 max-w-2xl text-center text-muted">
+          Caso queira entrar nas cores do tema da festa, pode optar por usar uma das cores a seguir:
+        </p>
+
+        <div className="flex gap-5 mt-12 justify-center">
+          <div className="flex min-w-25 flex-col items-center">
+            <FlowerSVG fill="#F75004" />
+            <p className="font-medium text-lg mt-2">Tangerine</p>
+          </div>
+
+          <div className="flex min-w-25 flex-col items-center">
+            <FlowerSVG fill="#FA8457" />
+            <p className="font-medium text-lg mt-2">Apricot</p>
+          </div>
+
+          <div className="flex min-w-25 flex-col items-center">
+            <FlowerSVG fill="#FB7FA0" />
+            <p className="font-medium text-lg mt-2">Blush</p>
+          </div>
+
+          <div className="flex min-w-25 flex-col items-center">
+            <FlowerSVG fill="#F40E5E" />
+            <p className="font-medium text-lg mt-2">Strawberry</p>
+          </div>
+
+          <div className="flex min-w-25 flex-col items-center">
+            <FlowerSVG fill="#F9BB50" />
+            <p className="font-medium text-lg mt-2">Lemonade</p>
+          </div>
         </div>
       </div>
     </section>

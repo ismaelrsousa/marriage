@@ -110,11 +110,10 @@ try {
     $db->set_charset('utf8mb4');
     $db->begin_transaction();
 
-    $ip = $_SERVER['REMOTE_ADDR'] ?? '';
     $insertConfirmation = $db->prepare(
-        'INSERT INTO rsvp_confirmations (contact, note, ip) VALUES (?, ?, ?)'
+        'INSERT INTO rsvp_confirmations (contact, note) VALUES (?, ?)'
     );
-    $insertConfirmation->bind_param('sss', $contact, $note, $ip);
+    $insertConfirmation->bind_param('ss', $contact, $note);
     $insertConfirmation->execute();
     $confirmationId = $db->insert_id;
     $insertConfirmation->close();
