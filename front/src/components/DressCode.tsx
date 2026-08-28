@@ -29,7 +29,7 @@ export function DressCode() {
           Caso queira entrar nas cores do tema da festa, pode optar por usar uma das cores a seguir:
         </p>
 
-        <div className="flex gap-5 mt-12 justify-center">
+        <div className="flex flex-wrap gap-5 mt-12 justify-center">
           <div className="flex min-w-25 flex-col items-center">
             <FlowerSVG fill="#F75004" />
             <p className="font-medium text-lg mt-2">Tangerine</p>
