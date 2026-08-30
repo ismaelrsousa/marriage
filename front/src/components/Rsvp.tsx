@@ -2,7 +2,7 @@ import { Plus, X } from "lucide-react"
 import { useState, type FormEvent } from "react"
 import { SectionTitle } from "./SectionTitle"
 
-const rsvpUrl = `http://localhost:8080/rsvp.php`
+const rsvpUrl = `https://api.nayara-ismael.com.br/rsvp.php`
 
 function wordCount(value: string) {
   return value.trim().split(/\s+/).filter(Boolean).length
