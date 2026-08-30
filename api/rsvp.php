@@ -3,10 +3,7 @@
 declare(strict_types=1);
 
 $allowedOrigins = [
-    'http://localhost:5173',
-    'http://127.0.0.1:5173',
-    'http://localhost:3000',
-    'https://ismaelrsousa.github.io',
+    'https://nayara-ismael.com.br'
 ];
 
 $origin = $_SERVER['HTTP_ORIGIN'] ?? '';
