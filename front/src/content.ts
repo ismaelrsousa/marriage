@@ -55,7 +55,7 @@ export const site = {
     { src: asset("images/galeria-2.png"), alt: "Mãos dadas" },
   ],
   gifts: {
-    url: "https://www.querodecasamento.com.br",
+    url: "https://noivos.casar.com/nayara-ismael",
     label: "Abrir lista de presentes",
   },
   heroPhoto: asset("images/hero-casal.png"),
