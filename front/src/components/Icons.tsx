@@ -1,6 +1,6 @@
 export function FlowerSVG({ fill }:any) {
     return (
-        <svg height="40" width="40" version="1.1" id="_x32_" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512"  xml:space="preserve">
+        <svg height="40" width="40" version="1.1" id="_x32_" viewBox="0 0 512 512">
             <g>
                 <path fill={fill} d="M512,223.537c0-61.46-49.773-111.264-111.264-111.264c-11.768,0-22.922,2.31-33.496,5.644
                     C366.948,56.657,317.346,7.084,255.985,7.084c-61.32,0-110.993,49.573-111.224,110.833c-10.573-3.334-21.728-5.644-33.496-5.644
