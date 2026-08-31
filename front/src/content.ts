@@ -41,7 +41,7 @@ export const site = {
     mapsQuery: "Rua Rio de Janeiro, 627, Itanhaém - SP",
     photos: [
       { src: asset("images/local-1.jpg"), alt: "Fachada da quinta" },
-      { src: asset("images/local-2.jpg"), alt: "Jardim da cerimônia" },
+      { src: asset("images/local-5.png"), alt: "Jardim da cerimônia" },
       { src: asset("images/local-cerimonia.png"), alt: "Jardim da cerimônia" },
       { src: asset("images/local-3.jpg"), alt: "Salão da festa" },
     ],
