@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" fill="none">
+  <rect width="640" height="400" rx="28" fill="#FFF6EA"/>
+  <circle cx="572" cy="318" r="50" fill="#F0C14A" opacity=".28"/>
+  <rect x="170" y="48" width="300" height="304" rx="24" fill="#FFFFFF"/>
+  <rect x="170" y="48" width="300" height="56" rx="24" fill="#E86A2A"/>
+  <rect x="170" y="80" width="300" height="24" fill="#E86A2A"/>
+  <text x="320" y="84" text-anchor="middle" font-family="Outfit, sans-serif" font-size="16" font-weight="600" fill="#FFF6EA">Seus dados</text>
+  <rect x="198" y="128" width="244" height="40" rx="12" fill="#F3E0C8"/>
+  <text x="214" y="153" font-family="Outfit, sans-serif" font-size="13" fill="#7A5648">Nome</text>
+  <rect x="198" y="180" width="244" height="40" rx="12" fill="#F3E0C8"/>
+  <text x="214" y="205" font-family="Outfit, sans-serif" font-size="13" fill="#7A5648">Mensagem</text>
+  <rect x="198" y="232" width="244" height="40" rx="12" fill="#F8D4C4"/>
+  <text x="214" y="257" font-family="Outfit, sans-serif" font-size="13" fill="#7A5648">Pagamento</text>
+  <rect x="198" y="288" width="244" height="40" rx="20" fill="#E45C7A"/>
+  <text x="320" y="313" text-anchor="middle" font-family="Outfit, sans-serif" font-size="14" font-weight="600" fill="#FFF6EA">Concluir compra</text>
+</svg>

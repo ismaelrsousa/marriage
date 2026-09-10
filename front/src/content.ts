@@ -57,6 +57,12 @@ export const site = {
   gifts: {
     url: "https://noivos.casar.com/nayara-ismael",
     label: "Abrir lista de presentes",
+    pix: {
+      qrCode: asset("images/qrcode-pix.png"),
+      copyPaste:
+        "00020126580014br.gov.bcb.pix0136SUBSTITUA-PELO-CODIGO-PIX-COPIA-E-COLA5204000053039865802BR5925Nayara e Ismael Casamento6009SAO PAULO62070503***6304ABCD",
+      recipient: "Nayara e Ismael",
+    },
   },
   heroPhoto: asset("images/hero-casal.png"),
 }
