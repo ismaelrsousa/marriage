@@ -73,11 +73,10 @@ const listaSteps: Step[] = [
 
 type Props = {
   tab: GiftHowToTab
-  onTabChange: (tab: GiftHowToTab) => void
   onClose: () => void
 }
 
-export function GiftHowToDialog({ tab, onTabChange, onClose }: Props) {
+export function GiftHowToDialog({ tab, onClose }: Props) {
   const steps = tab === "pix" ? pixSteps : listaSteps
 
   useEffect(() => {
@@ -168,27 +167,5 @@ export function GiftHowToDialog({ tab, onTabChange, onClose }: Props) {
       </div>
     </div>,
     document.body,
-  )
-}
-
-function TabButton({
-  active,
-  onClick,
-  children,
-}: {
-  active: boolean
-  onClick: () => void
-  children: string
-}) {
-  return (
-    <button
-      type="button"
-      onClick={onClick}
-      className={`rounded-full px-3 py-2 text-sm font-medium transition ${
-        active ? "bg-cream text-ink shadow-sm" : "text-muted hover:text-ink"
-      }`}
-    >
-      {children}
-    </button>
   )
 }

@@ -102,7 +102,6 @@ export function Gifts() {
       {howTo ? (
         <GiftHowToDialog
           tab={howTo}
-          onTabChange={setHowTo}
           onClose={() => setHowTo(null)}
         />
       ) : null}
