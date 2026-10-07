@@ -35,10 +35,10 @@ export const site = {
   },
   venue: {
     name: "Casa Cordeiro",
-    address: "Rua Rio de Janeiro, 627",
+    address: "Rua Rio de Janeiro, 672",
     city: "Cibratel II, Itanhaém - SP",
     notes: "Cerimônia no jardim às 15h. A festa segue no pavilhão ao lado.",
-    mapsQuery: "Rua Rio de Janeiro, 627, Itanhaém - SP",
+    mapsQuery: "Rua Rio de Janeiro, 672, Itanhaém - SP",
     photos: [
       { src: asset("images/local-1.jpg"), alt: "Fachada da quinta" },
       { src: asset("images/local-5.png"), alt: "Jardim da cerimônia" },
