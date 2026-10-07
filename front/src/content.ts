@@ -65,6 +65,10 @@ export const site = {
     },
   },
   heroPhoto: asset("images/hero-casal.png"),
+  ceremony: {
+    youtubeId: "aw5FgCLUKZg",
+    url: "https://www.youtube.com/live/aw5FgCLUKZg",
+  },
 }
 
 export const navItems = [
@@ -74,5 +78,5 @@ export const navItems = [
   { href: "#local", label: "Onde vai ser" },
   { href: "#traje", label: "O que vestir" },
   { href: "#presentes", label: "Lista de Presentes" },
-  { href: "#confirmar", label: "Confirme sua Presença" },
+  { href: "#cerimonia", label: "Assistir à cerimônia" },
 ] as const

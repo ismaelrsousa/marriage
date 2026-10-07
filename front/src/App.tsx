@@ -6,7 +6,7 @@ import { Gallery } from "./components/Gallery"
 import { Gifts } from "./components/Gifts"
 import { Hero } from "./components/Hero"
 import { Nav } from "./components/Nav"
-import { Rsvp } from "./components/Rsvp"
+import { Ceremony } from "./components/Ceremony"
 import { Venue } from "./components/Venue"
 
 export default function App() {
@@ -21,7 +21,7 @@ export default function App() {
         <Venue />
         <DressCode />
         <Gifts />
-        <Rsvp />
+        <Ceremony />
       </main>
       <Footer />
     </div>
