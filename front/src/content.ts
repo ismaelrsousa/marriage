@@ -66,8 +66,8 @@ export const site = {
   },
   heroPhoto: asset("images/hero-casal.png"),
   ceremony: {
-    youtubeId: "aw5FgCLUKZg",
-    url: "https://www.youtube.com/live/aw5FgCLUKZg",
+    youtubeId: "OuFak5Vf2ZU",
+    url: "https://www.youtube.com/live/OuFak5Vf2ZU",
   },
 }
 
